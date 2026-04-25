@@ -1,19 +1,16 @@
-@font-face {
+/* @font-face {
     font-family: "Linux Bio";
     src: url(../linux-biolinum/LinBiolinum_RB.otf);
-}
+} */
 
 @font-face {
     font-family: "Kanit";
     src: url(../Kanit-Regular.ttf);
 }
 
-/* header {
-    font-family: "Linux Bio";
-} */
-
-* { 
-    font-family: "Kanit";
+@font-face {
+    font-family: "Fredoka Bold";
+    src: url(../Fredoka-Bold.ttf);
 }
 
 html {
@@ -33,11 +30,14 @@ header {
     flex-shrink: 0;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    font-family: "Kanit";
 
-    & > a {
+    & a {
         display: flex;
         align-items: center;
         gap: 1rem;
+        color: white;
+        text-decoration: none;
     }
 
     nav {
@@ -48,6 +48,7 @@ header {
             margin: 0;
             display: flex;
             gap: 1rem;
+            align-items: center;
         }
 
         .discord {
@@ -94,12 +95,27 @@ main {
         left: 50%;
         background-color: #312222;
         color: white;
-        padding: 0.5rem;
+        padding: 0.5rem 1rem;
         border-radius: 3rem;
-        h3 {
-            font-size: 3rem;
+        h1 {
+            font-size: 2rem;
+            font-family: "Fredoka Bold";
         }
-    } 
+    }
+
+    #butterfly-1 {
+        position: absolute;
+        transform: scale(10%) translateY(-360%) translateX(-550%);
+    }
+    #butterfly-2 {
+        position: absolute;
+        transform: scale(8%) translateX(-800%) translateY(-580%);
+    }
+    #butterfly-3 {
+        position: absolute;
+        transform: scale(22%) rotateY(180deg) translateX(-250%) translateY(-200%);
+    }
+
     h2, h3, p {
         margin: 0;
     }
@@ -119,31 +135,63 @@ main {
             height: 100%;
             position: relative;
 
+            h1 {
+                font-size: 4rem;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                img {
+                    height: 55px;
+                }
+            }
+
+            p {
+                font-size: 1.5rem;
+            }
+
+            .blue-pane, .pink-pane {
+                transition: background-color linear 0.2s, color linear 0.2s;
+            }
+
             &.version-gbvs {
                 background-image: url(../img/bg_gbvs.webp);
                 .blue-pane {
+                    font-family: "Kanit";
                     position: absolute;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
                     inset: 0;
-                    background-color: rgba(3, 192, 246, 0.4);
                     z-index: 1;
+                    background-color: rgba(0, 0, 0, 0.8);
+                    color: white;
+                }
+                .blue-pane:hover {
+                    background-color: hsla(193, 98%, 29%, 0.4);
+                    color: white;
                 }
             }
 
             &.version-gbvsr {
                 background-image: url(../img/bg_gbvsr.webp);
                 .pink-pane {
+                    font-family: "Kanit";
                     position: absolute;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
                     inset: 0;
-                    background-color: rgba(163, 0, 154, 0.4);
                     z-index: 1;
+                    color: white;
+                    background-color: rgba(0, 0, 0, 0.8);
+                }
+
+                .pink-pane:hover {
+                    background-color: hsla(303, 100%, 12%, 0.4);
+                    color: white;
                 }
             }
 
