@@ -119,6 +119,7 @@ main {
     h2, h3, p {
         margin: 0;
     }
+
     section {
         display: flex;
         height: -webkit-fill-available; /* Safari */
@@ -171,6 +172,9 @@ main {
                 .blue-pane:hover {
                     background-color: hsla(193, 98%, 29%, 0.4);
                     color: white;
+                    p {
+                        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+                    }
                 }
             }
 
@@ -198,6 +202,9 @@ main {
                     color: white;
                     img {
                         opacity: 1;
+                    }
+                    h1, p {
+                        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
                     }
                 }
             }
