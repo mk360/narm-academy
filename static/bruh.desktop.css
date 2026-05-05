@@ -1,0 +1,119 @@
+h1, p {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+@media (min-width: 768px) {
+    .blue-pane, .pink-pane {
+        transition: background-color linear 0.2s, color linear 0.2s;
+    }
+
+    header {
+        nav {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    main {
+        position: relative;
+
+        .choose {
+            position: absolute;
+            z-index: 2;
+            top: 2%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3rem;
+            background-color: #312222;
+            background-image: none;
+            padding: 0.5rem 1rem;
+
+            object {
+                display: block;
+            }
+        }
+
+        #butterfly-1 {
+            position: absolute;
+            transform: scale(10%) translateY(-360%) translateX(-550%);
+        }
+        #butterfly-2 {
+            position: absolute;
+            transform: scale(8%) translateX(-800%) translateY(-580%);
+        }
+        #butterfly-3 {
+            position: absolute;
+            transform: scale(22%) rotateY(180deg) translateX(-250%) translateY(-200%);
+        }
+    }
+
+    section {
+        flex-direction: row;
+
+        a {
+            display: revert;
+        }
+
+        .version-select {
+            position: relative;
+            h1 {
+                font-size: 4rem;
+                img {
+                    height: 55px;
+                }
+            }
+
+            .portrait {
+                z-index: unset;
+                max-width: 100%;
+            }
+
+            &.version-gbvs {
+                background-image: url(../img/bg_gbvs.webp);
+                background-color: unset;
+
+                &::before {
+                    display: none;
+                }
+
+                .blue-pane {
+                    background-color: rgba(0, 0, 0, 0.8);
+                    color: transparent;
+                    position: absolute;
+                    &:hover {
+                        background-color: hsla(193, 98%, 29%, 0.4);
+                        color: white;
+                        p {
+                            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+                        }
+                    }
+                }
+            }
+
+            &.version-gbvsr {
+                background-image: url(../img/bg_gbvsr.webp);
+                background-color: unset;
+
+                .pink-pane {
+                    position: absolute;
+                    color: transparent;
+                    background-color: rgba(0, 0, 0, 0.8);
+
+                    img {
+                        opacity: 0;
+                        transition: opacity 0.2s linear;
+                    }
+                }
+
+                .pink-pane:hover {
+                    background-color: hsla(303, 100%, 12%, 0.4);
+                    color: white;
+
+                    h1 img {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
