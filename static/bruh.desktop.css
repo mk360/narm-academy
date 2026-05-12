@@ -2,9 +2,13 @@ h1, p {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
     .blue-pane, .pink-pane {
         transition: background-color linear 0.2s, color linear 0.2s;
+    }
+
+    .fake-cta {
+        display: none;
     }
 
     header {
@@ -66,6 +70,7 @@ h1, p {
             .portrait {
                 z-index: unset;
                 max-width: 100%;
+                filter: none;
             }
 
             &.version-gbvs {
